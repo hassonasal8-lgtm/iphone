@@ -682,74 +682,48 @@
     /* kort-card-img defined in ripple section below */
 
    /* ── RIPPLE ── */
-.card-ripple-wrap {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 82%;
-  max-width: 340px;
-}
-
-.kort-card-img {
-  width: 100%;
-  border-radius: 16px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
-  display: block;
-  position: relative;
-  z-index: 2;
-}
-
-/* Ripple rings (stamp pulse style) */
 .ripple-ring {
   position: absolute;
   border-radius: 50%;
   pointer-events: none;
   z-index: 3;
 
-  /* Adjusted to match your screenshot */
+  /* keep position (adjust if needed later) */
   left: 23%;
   top: 85%;
   transform: translate(-50%, -50%);
 
-  width: 56px;
-  height: 56px;
+  /* 🔥 bigger base size */
+  width: 90px;
+  height: 90px;
 
-  border: 5px solid rgba(244, 131, 42, 0.9);
+  border: 6px solid rgba(244, 131, 42, 0.9);
 }
 
-/* First ring */
 .ripple-ring.r1 {
-  animation: ripplePulse 1.8s ease-out infinite;
+  animation: ripplePulse 2s ease-out infinite;
 }
 
-/* Second ring (delayed) */
 .ripple-ring.r2 {
-  animation: ripplePulse 1.8s ease-out infinite;
-  animation-delay: 0.9s;
+  animation: ripplePulse 2s ease-out infinite;
+  animation-delay: 1s;
 }
 
-/* Remove extra ring */
-.ripple-ring.r3 {
-  display: none;
-}
-
-/* Pulse animation (tight + smooth like Mecenat) */
 @keyframes ripplePulse {
   0% {
-    transform: translate(-50%, -50%) scale(0.9);
-    opacity: 0.9;
-    border-width: 6px;
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.95;
+    border-width: 7px;
   }
 
   60% {
-    transform: translate(-50%, -50%) scale(1.35);
-    opacity: 0.4;
-    border-width: 4px;
+    transform: translate(-50%, -50%) scale(1.8);
+    opacity: 0.5;
+    border-width: 5px;
   }
 
   100% {
-    transform: translate(-50%, -50%) scale(1.55);
+    transform: translate(-50%, -50%) scale(2.4);
     opacity: 0;
     border-width: 2px;
   }
