@@ -681,49 +681,79 @@
 
     /* kort-card-img defined in ripple section below */
 
-    /* ── RIPPLE ── */
-    .card-ripple-wrap {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 82%;
-      max-width: 340px;
-    }
+   /* ── RIPPLE ── */
+.card-ripple-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 82%;
+  max-width: 340px;
+}
 
-    .kort-card-img {
-      width: 100%;
-      border-radius: 16px;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
-      display: block;
-      position: relative;
-      z-index: 2;
-    }
+.kort-card-img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+  display: block;
+  position: relative;
+  z-index: 2;
+}
 
-    /* Two solid orange rings overlaid on the card at the stamp position */
-    .ripple-ring {
-      position: absolute;
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 3;
-      /* Stamp box is ~20% from left, ~88% from top of the card */
-      left: 20%;
-      top: 88%;
-      width: 50px;
-      height: 50px;
-      transform: translate(-50%, -50%);
-      border: 6px solid rgba(210, 120, 40, 0.8);
-      animation: rippleOut 2s ease-out infinite;
-    }
+/* Ripple rings (stamp pulse style) */
+.ripple-ring {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 3;
 
-    .ripple-ring.r1 { animation-delay: 0s; }
-    .ripple-ring.r2 { animation-delay: 1s; }
-    .ripple-ring.r3 { display: none; }
+  /* Adjusted to match your screenshot */
+  left: 23%;
+  top: 85%;
+  transform: translate(-50%, -50%);
 
-    @keyframes rippleOut {
-      0%   { width: 50px;  height: 50px;  border-color: rgba(210,120,40,0.85); border-width: 7px; }
-      100% { width: 170px; height: 170px; border-color: rgba(210,120,40,0);    border-width: 2px; }
-    }
+  width: 56px;
+  height: 56px;
+
+  border: 5px solid rgba(244, 131, 42, 0.9);
+}
+
+/* First ring */
+.ripple-ring.r1 {
+  animation: ripplePulse 1.8s ease-out infinite;
+}
+
+/* Second ring (delayed) */
+.ripple-ring.r2 {
+  animation: ripplePulse 1.8s ease-out infinite;
+  animation-delay: 0.9s;
+}
+
+/* Remove extra ring */
+.ripple-ring.r3 {
+  display: none;
+}
+
+/* Pulse animation (tight + smooth like Mecenat) */
+@keyframes ripplePulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.9;
+    border-width: 6px;
+  }
+
+  60% {
+    transform: translate(-50%, -50%) scale(1.35);
+    opacity: 0.4;
+    border-width: 4px;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.55);
+    opacity: 0;
+    border-width: 2px;
+  }
+}
   </style>
 </head>
 <body>
