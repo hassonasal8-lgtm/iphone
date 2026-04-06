@@ -2,7 +2,7 @@
   "name": "Studentrabatter",
   "short_name": "Rabatter",
   "description": "Hitta dina studentrabatter",
-  "start_url": "/index.html",
+  "start_url": "/iphone/index.html",
   "display": "standalone",
   "background_color": "#00AABB",
   "theme_color": "#00AABB",
